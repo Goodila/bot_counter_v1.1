@@ -28,7 +28,7 @@ def bot_message_handler(message):
         res.append(lst_v.index(max(lst_v)))
         result += f"{i+1}. {list(D[str(message.chat.id)].items())[lst_v.index(max(lst_v))]}\n"
         lst_v[lst_v.index(max(lst_v))] = 0
-    result += f'\n всего уникальных слов было использовано - {len(dict1)}'
+    result += f'\n всего уникальных слов было использовано - {len(dict1[str(message.chat.id)])}'
 
     bot.send_message(message.chat.id, f"самые часто используемые слова в вашей беседе это:\n {result}")
 
