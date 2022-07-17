@@ -33,7 +33,7 @@ def bot_message_handler(message):
     bot.send_message(message.chat.id, f"самые часто используемые слова в вашей беседе это:\n {result}")
 
 
-@bot.message_handler(content_types=["text"])
+@bot.message_handler(func=lambda message: message)
 def bot_message_handler(message):
     lst = message.text.split(' ')
     dict1 = json.load(open("dict_counter.txt", "r"))
