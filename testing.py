@@ -16,8 +16,7 @@ def bot_message_handler(message):
 
 @bot.message_handler(commands=["count"])
 def bot_message_handler(message):
-    with open("dict_counter.txt") as dict1:
-        dict1 = json.load(dict1)
+    dict1 = json.load(open("dict_counter.txt", "r"))
 
     #dict1 = json.load(open("dict_counter.txt", "r"))
     res = []
